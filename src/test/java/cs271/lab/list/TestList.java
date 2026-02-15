@@ -120,7 +120,8 @@ public class TestList {
     // TODO using containsAll and List.of (see above),
     // 1) assert that list contains all five different numbers added
     // 2) assert that list does not contain all of 11, 22, and 33
-    fail("Not yet implemented"); // remove this line when done
+    assertTrue(list.containsAll(List.of(33, 77, 44, 55, 66)));
+    assertEquals(false, list.containsAll(List.of(11, 22, 33)));
   }
 
   @Test
@@ -171,6 +172,7 @@ public class TestList {
     list.add(55);
     list.add(77);
     list.add(66);
+    list.retainAll(List.of(77));
     // TODO in a single statement using retainAll and List.of,
     // remove items from the list to make the following assertions pass
     // (without touching the assertions themselves)
@@ -214,6 +216,6 @@ public class TestList {
     list.add(66);
     // TODO fix the arguments in the subList method so that the assertion
     // passes
-    assertEquals(List.of(44, 77, 55), list.subList(0, 0));
+    assertEquals(List.of(44, 77, 55), list.subList(2, 5));
   }
 }
