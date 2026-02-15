@@ -48,10 +48,15 @@ public class TestList {
 
   @Test
   public void testContains() {
+     {
+      assertTrue(!list.contains(77));  // before adding
+      list.add(77);
+      assertTrue(list.contains(77));   // after adding
+    }
     // TODO write assertions using
     // list.contains(77)
     // that hold before and after adding 77 to the list
-    fail("Not yet implemented"); // remove this line when done
+
   }
 
   @Test
